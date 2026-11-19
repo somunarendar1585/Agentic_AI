@@ -1,5 +1,0 @@
-github-copilot-sdk
-mcp>=1.12,<2
-microsoft-copilot-sdk[telemetry]==2.0.0rc2
-fastapi
-uvicorn

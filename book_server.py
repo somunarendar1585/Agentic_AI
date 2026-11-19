@@ -1,10 +1,9 @@
 from mcp.server.fastmcp import FastMCP
 
-server = FastMCP("Book Library")
+server = FastMCP("Book Library")           # Creates the MCP server.
 
-
-@server.tool()
-def check_book(title: str) -> str:
+@server.tool()                           # Exposes check_book as a tool.
+def check_book(title: str) -> str:        # Describes the input the tool accepts.
     """Look up a book in the library's sample records."""
     books = {
         "python basics": "Available",
@@ -15,4 +14,4 @@ def check_book(title: str) -> str:
 
 
 if __name__ == "__main__":
-    server.run(transport="stdio")
+    server.run(transport="stdio")          #  Communicates through the server process’s standard input and output.

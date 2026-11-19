@@ -29,9 +29,8 @@ async def main():
     )
 
     response = await session.send_and_wait(
-        "Look up both books and return one result per line:\n"
-        "Learning SQL should return Borrowed.\n"
-        "Learning Java should return Book not found."
+        "Use the books MCP server's check_book tool to check "
+        "whether Learning Java is available. Report its result."
     )
 
     if response and isinstance(response.data, AssistantMessageData):
@@ -41,4 +40,5 @@ async def main():
     await client.stop()
 
 
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
